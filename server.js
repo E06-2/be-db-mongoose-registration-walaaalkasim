@@ -3,15 +3,17 @@ const express = require('express');
 const app = express();
 const db = require('./db');
 const dotenv = require('dotenv');
-app.use(express.json());
+
 dotenv.config();
+app.use(express.json());
+
 const userRoute = require('./routes/userRoute');
 db();
 //app.use('/user', userRoute);
 
 app.post('/user/register', (req, res) => {
 	console.log('body', req.body);
-	res.send('post is not working');
+	res.send('post is working');
 });
 
 const port = 8082;
