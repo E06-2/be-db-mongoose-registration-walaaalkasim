@@ -2,13 +2,14 @@
   "name": "db-mongoose-schemas",
   "version": "1.0.0",
   "description": "This assignment will give you chance to practise writing Mongoose Schemas",
-  "main": "index.js",
-  "scripts": {
-  },
+  "main": "server.js",
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.0",
+    "mongoose": "^6.2.9"
   },
   "devDependencies": {
     "prettier": "^2.1.2"
