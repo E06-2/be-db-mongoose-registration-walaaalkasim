@@ -1,5 +1,4 @@
-const dotenv = require('dotenv');
+//equire('dotenv').config();
 const db = require('./db');
-dotenv.config();
 
-console.log(process.env.DB_NAME);
+db();
