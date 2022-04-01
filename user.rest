@@ -3,9 +3,5 @@ get http://localhost:8082/test
 ###
 
 post http://localhost:8082/user/register
-Content-Type: application/json
 
-{
-    "email":"test@test.com",
-    "pass":"1234"
-}
+
