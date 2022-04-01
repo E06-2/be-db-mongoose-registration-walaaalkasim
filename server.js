@@ -15,16 +15,16 @@ db();
 //app.use('/user', userRoute);
 
 app.post('/user/register', async (req, res) => {
-	let {
-		username,
-		password
+	//let {
+		//username,
+		//password
 		// firstName,
 		// lastName,
 		// dateOfBirth,
 		// email,
 		// telephone,
 		// gender
-	} = req.body;
+	//} = req.body;
 	console.log('body', req.body);
 	//console.log('req-body', req.body);
 	const newUser = await User.create({
