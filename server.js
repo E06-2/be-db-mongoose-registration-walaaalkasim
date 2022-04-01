@@ -15,51 +15,70 @@ db();
 //app.use('/user', userRoute);
 
 app.post('/user/register', async (req, res) => {
+	//let {
+	//username, password;
+	//firstName, lastName, dateOfBirth, email, telephone, gender;
+	//} = req.body;
+
+	//console.log('req-body', req.body);
 	let {
 		username,
-		password
-		// firstName,
-		// lastName,
-		// dateOfBirth,
-		// email,
-		// telephone,
-		// gender
+		password,
+		firstName,
+		lastName,
+		dateOfBirth,
+		email,
+		telephone,
+		gender
 	} = req.body;
-	console.log('body', req.body);
-	//console.log('req-body', req.body);
-	const newUser = await User.create({
-		username: 'francsmit',
-		password: '1234',
+	try {
+		const newUser = await User.create({
+			username: 'sara512',
+			password: '1234',
+			firstName: 'sarah',
+			lastName: 'dir',
+			dateOfBirth: new Date(),
+			email: 'test@test.com',
+			telephone: '0123456789',
+			gender: 'Female'
+		});
 
-		firstName: 'franco',
-		lastName: 'smith',
-		dateOfBirth: new Date(),
-		email: 'test@test.com',
-		telephone: '0123456789',
-		gender: 'Male'
-	});
+		req.body = newUser;
+		console.log('body', req.body.username);
+		res.send('200');
 
-	newUser.save((err, doc) => {
-		if (err) {
-			console.log(err);
-			res.send('there is an error');
+		if (newUser) {
+			console.log('the promise is successful');
+			console.log(newUser);
 		} else {
-			console.log(doc);
-
-			res.send('data saved !!');
+			console.log(' the promise is unsuccessful');
 		}
-	});
 
-	if (newUser) {
-		console.log('the promise is successful');
-	} else {
-		console.log(' the promise is unsuccessful');
+		newUser.save((err, doc) => {
+			if (err) {
+				console.log(err);
+				//res.send('there is an error');
+			} else {
+				console.log(doc);
+
+				//res.send('data saved !!');
+			}
+		});
+	} catch (e) {
+		console.log(e, 'error');
+		res.send('400');
 	}
 });
 
 const port = 8082;
 //const port = process.env.PORT;
-app.get('/test', (req, res) => {
+app.get('/user/list', (req, res) => {
 	res.send('testing : get is working');
+	try {
+		const user = User.find();
+		console.log(user.username);
+	} catch (e) {
+		console.log('error', e);
+	}
 });
 app.listen(port, () => console.log(`server started on port ${port}`));
