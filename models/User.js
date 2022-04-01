@@ -13,4 +13,4 @@ const UserSchema = new mongoose.Schema({
 		default: 'N/A'
 	}
 });
-module.exports = mongoose.model('users', UserSchema);
+module.exports = mongoose.model('User', UserSchema);
