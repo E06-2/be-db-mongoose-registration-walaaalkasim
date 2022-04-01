@@ -15,12 +15,6 @@ db();
 //app.use('/user', userRoute);
 
 app.post('/user/register', async (req, res) => {
-	//let {
-	//username, password;
-	//firstName, lastName, dateOfBirth, email, telephone, gender;
-	//} = req.body;
-
-	//console.log('req-body', req.body);
 	let {
 		username,
 		password,
