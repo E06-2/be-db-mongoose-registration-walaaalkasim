@@ -1,0 +1,13 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+    border: 1px solid;
+    padding: 10px;
+    gap: 10px;
+    
+    margin-left: 35vw;
+}
+input{
+    height: 3vh;
+}
