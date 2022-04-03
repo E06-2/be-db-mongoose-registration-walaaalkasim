@@ -65,71 +65,77 @@ const UserData = () => {
 		fetch(url, options)
 			.then((response) => response.text())
 			.then((result) => {
-				alert(result);
+				alert(result.msg);
 			});
 	};
 
 	return (
-		<form className="form">
-			<input
-				type="text"
-				placeholder="username"
-				name="username"
-				value={username}
-				onChange={inputHandler}
-			/>
-			<input
-				type="password"
-				placeholder="password"
-				name="password"
-				value={password}
-				onChange={inputHandler}
-			/>
-			<input
-				type="text"
-				placeholder="firstName"
-				name="firstName"
-				value={firstName}
-				onChange={inputHandler}
-			/>
-			<input
-				type="text"
-				placeholder="lastName"
-				name="lastName"
-				value={lastName}
-				onChange={inputHandler}
-			/>
-			<input
-				type="date"
-				placeholder="dateOfBirth"
-				name="dateOfBirth"
-				value={dateOfBirth}
-				onChange={inputHandler}
-			/>
-			<input
-				type="email"
-				placeholder="email"
-				name="email"
-				value={email}
-				onChange={inputHandler}
-			/>
-			<input
-				type="tel"
-				placeholder="telephone"
-				name="telephone"
-				value={telephone}
-				onChange={inputHandler}
-			/>
-			<label>gender</label>
-			<div className="gender-sec" onChange={inputHandler}>
-				<input type="radio" value="Male" name="gender" /> Male
-				<input type="radio" value="Female" name="gender" /> Female
-				<input type="radio" value="Other" name="gender" /> Other
-				<input type="radio" value="N/A" name="gender" />
-				N/A
-			</div>
-			<button onClick={submitHandler}>submit</button>
-		</form>
+		<div>
+			{' '}
+			<h3 className="prof-head">Profile Form</h3>
+			<form className="form">
+				<input
+					type="text"
+					placeholder="username"
+					name="username"
+					value={username}
+					onChange={inputHandler}
+				/>
+				<input
+					type="password"
+					placeholder="password"
+					name="password"
+					value={password}
+					onChange={inputHandler}
+				/>
+				<input
+					type="text"
+					placeholder="firstName"
+					name="firstName"
+					value={firstName}
+					onChange={inputHandler}
+				/>
+				<input
+					type="text"
+					placeholder="lastName"
+					name="lastName"
+					value={lastName}
+					onChange={inputHandler}
+				/>
+				<input
+					type="date"
+					placeholder="dateOfBirth"
+					name="dateOfBirth"
+					value={dateOfBirth}
+					onChange={inputHandler}
+				/>
+				<input
+					type="email"
+					placeholder="email"
+					name="email"
+					value={email}
+					onChange={inputHandler}
+				/>
+				<input
+					type="tel"
+					placeholder="telephone"
+					name="telephone"
+					value={telephone}
+					onChange={inputHandler}
+				/>
+				<label>gender</label>
+				<div className="gender-sec" onChange={inputHandler}>
+					<input type="radio" value="Male" name="gender" /> Male
+					<input type="radio" value="Female" name="gender" /> Female
+					<input type="radio" value="Other" name="gender" /> Other
+					<input type="radio" value="N/A" name="gender" />
+					N/A
+				</div>
+				<button className="sub-btn" onClick={submitHandler}>
+					submit
+				</button>
+			</form>
+		</div>
 	);
 };
 

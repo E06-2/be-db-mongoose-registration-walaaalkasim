@@ -5,6 +5,8 @@ const db = require('./db');
 const dotenv = require('dotenv');
 const User = require('./models/User');
 
+const userRouter = require('./routes/userRoute');
+
 dotenv.config();
 app.use(express.json());
 app.use(cors());
@@ -12,23 +14,15 @@ app.use(cors());
 //const userRoute = require('./routes/userRoute');
 db();
 
-app.post('/user/register', async (req, res) => {
-	console.log(req.body);
-	try {
-		const newUser = await User({ ...req.body });
-		newUser.save();
-	} catch (e) {
-		console.log(e, 'error');
-		res.send('there is an error');
-	}
-});
+app.use('/user', userRouter);
 
 const port = 8082;
 
 app.get('/user/list', (req, res) => {
 	res.send('testing : get is working');
 	try {
-		const user = User.find();
+		const user = User.findOne();
+
 		console.log(user.username);
 	} catch (e) {
 		console.log('error', e);
