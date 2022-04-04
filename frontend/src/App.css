@@ -1,0 +1,37 @@
+.form{
+    margin-top:5vh;
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+    border: 1px solid;
+    padding: 10px;
+    gap: 10px;
+    background-color: rgb(60, 162, 122);
+    margin-left: 41.5vw;
+}
+.prof-head{ 
+     margin-top:5vh;
+   text-align: center;
+   padding-top: 2vh;
+     margin-left: 41.5vw;
+   color: aliceblue;
+    width: 16vw;
+    height: 5vh;
+    background-color: rgb(60, 162, 122);
+    
+}
+input{
+    height: 3vh;
+}
+input:hover{
+    background-color: rgb(48, 59, 49);
+    color: aliceblue;
+}
+.sub-btn{
+    height: 3vh;
+    background-color: aliceblue;
+}
+.sub-btn:hover{
+    background-color: black;
+    color: aliceblue;
+}
