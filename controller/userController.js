@@ -1,8 +1,6 @@
 const User = require('../models/User');
 
 exports.register = async (req, res) => {
-	//console.log('req', ObjectId);
-
 	try {
 		const newUser = await User({ ...req.body });
 
@@ -12,9 +10,9 @@ exports.register = async (req, res) => {
 			} else {
 				console.log(doc);
 				console.log('document saved !!');
+				res.send('done!');
 			}
 		});
-		//const userId = req.payload.userId;
 	} catch (e) {
 		console.log(e, 'error');
 		res.send('there is an error');

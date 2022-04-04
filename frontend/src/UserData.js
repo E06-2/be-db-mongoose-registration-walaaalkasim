@@ -65,7 +65,7 @@ const UserData = () => {
 		fetch(url, options)
 			.then((response) => response.text())
 			.then((result) => {
-				alert(result.msg);
+				alert(result);
 			});
 	};
 
